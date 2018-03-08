@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>lw-topic.dtd</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>lw-topic.dtd</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE><SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    Lightweight DITA Topic                            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.0                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      XXX                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an
+      appropriate system identifier:
+PUBLIC "-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN"
+      Delivered as file "lw-topic.dtd"                             --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Lightweight DITA                                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    DTD to describe Lightweight DITA topic            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             XXXX                                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) OASIS                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Nov 2014 KJE: Upload files to DITA TC SVN repo          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    16 May 2016  MG: Upload files to GitHub repo               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    03 Apr 2017  CE: Added XDITA constraint token              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    11 Jun 2017 KJE: Added headers and update logs             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    20 Jun 2017  CE: Added prefix lw- to filename              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Jul 2017  CE: Changed public identifier to LIGHTWEIGHT  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     DITA                                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ADD PHRASE ELEMENTS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- hi-d --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.ph"><STRONG>ph</STRONG></A>           "<A HREF="lw-topic.mod.html#ElementDef22">ph</A> | <A HREF="lw-highlightDomain.mod.html#ElementDef38">b</A> | <A HREF="lw-highlightDomain.mod.html#ElementDef39">i</A> |<A HREF="lw-highlightDomain.mod.html#ElementDef40">u</A> | <A HREF="lw-highlightDomain.mod.html#ElementDef41">sup</A> | <A HREF="lw-highlightDomain.mod.html#ElementDef42">sub</A>"       &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ADD FILTERING ATTRIBUTES                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- none--&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ENTITY % filter-adds
+      "ADD-ATTRIBUTE-HERE      CDATA                        #IMPLIED"--&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DECLARE USE OF ELEMENT/ATTRIBUTE DOMAINS                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY included-domains                         "(<A HREF="lw-topic.mod.html#ElementDef1">topic</A> hi-d) (<A HREF="lw-topic.mod.html#ElementDef1">topic</A> h5m-d)"           &gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    REMOVE ATTRIBUTE/ELEMENT GROUPS                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- Remove a group by uncommenting its redefinition below --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--ENTITY % filters " " --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--ENTITY % reuse " " --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--ENTITY % variable-content " " --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--ENTITY % variable-links " " --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--ENTITY % localization " " --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--ENTITY % nested-blocks "p" --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--For each group removed add a corresponding constraint value to
+    the excluded-domains entity. The constraint name should be "no-"
+    followed by the name of the entity removed/constrained.
+    For example, if you removed reuse attributes, add the value
+    "no-reuse-c" to the excluded-domains entity definition--&gt;</SPAN>
+
+&lt;!ENTITY excluded-domains                         " "                &gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    INCLUDE TOPIC AND SECTION MODULES          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    Embed topic module to get generic elements --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.topic-type"><STRONG>topic-type</STRONG></A>   PUBLIC
+"-//OASIS//ELEMENTS LIGHTWEIGHT DITA Topic//EN"
+"lw-topic.mod"                                                       &gt;
+<A HREF="lw-topic.dtd.html#EntityDef.topic-type">%topic-type;</A>
+
+<SPAN CLASS="COMMENT">&lt;!--                    Embed section modules                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- none --&gt;</SPAN>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    INCLUDE PHRASE MODULES                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.hi-d-def"><STRONG>hi-d-def</STRONG></A>     PUBLIC
+" -//OASIS//ELEMENTS LIGHTWEIGHT DITA Highlight Domain//EN"
+"lw-highlightDomain.mod"                                                &gt;
+<A HREF="lw-topic.dtd.html#EntityDef.hi-d-def">%hi-d-def;</A>
+
+
+<SPAN CLASS="COMMENT">&lt;!-- ============== End LIGHTWEIGHT DITA Topic DTD  =============== --&gt;</SPAN>
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

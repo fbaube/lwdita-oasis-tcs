@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>lw-topic.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>lw-topic.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE><SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    Lightweight DITA Topic                            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.0                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      XXX                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an
+      appropriate system identifier:
+PUBLIC "-//OASIS//ELEMENTS LIGHTWEIGHT DITA Topic//EN"
+      Delivered as file "lw-topic.mod"                                --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Lightweight DITA                                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for Lightweight DITA topics            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             XXXX                                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) OASIS                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Nov 2014 KJE: Upload files to DITA TC SVN repo          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jul 2015  MG: Made &lt;shortdesc&gt; and &lt;prolog&gt; optional;   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     disabled nested topics                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    16 May 2016  MG: Upload files to GitHub repo               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    10 Jul 2016  MG: Removed object element, renamed           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     table-blocks to simple-blocks, added fn   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    26 Aug 2016  MG: Added template specialization markup;     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     added @outputclass; added @href to &lt;data&gt; --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    19 Mar 2017  MG: Allow PCDATA in &lt;data&gt;                    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    27 Mar 2017  CE: Added &lt;data&gt; to block entities            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    28 Mar 2017  MG: Touch up &lt;data&gt; additions                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    31 Mar 2017  MG: Made &lt;body&gt; optional                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    09 May 2017  CE: Added @width and @height to &lt;video&gt; and   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     &lt;audio&gt;                                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    10 May 2017  CE: Added @iframe to &lt;video&gt;                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    11 May 2017  CE: Removed &lt;fnref&gt;                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    16 May 2017  CE: Removed @width and @height from &lt;audio&gt;   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    29 May 2017  MG: Added fn-blocks entity; removed &lt;param&gt;,  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     &lt;specmeta&gt;,&lt;specatt&gt;; removed %spec-atts  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    11 Jun 2017 KJE: Added headers and update logs             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jun 2017  CE: Removed filtering from &lt;dt&gt; and &lt;dd&gt;      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jun 2017  CE: Removed &lt;image&gt; from &lt;pre&gt;                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jun 2017  CE: Modified &lt;stentry&gt;, &lt;strow&gt;, &lt;dlentry&gt;,   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     and &lt;li&gt; to allow one-or-more             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    14 Jun 2017  CE: Removed &lt;fn&gt; from &lt;body&gt;                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    14 Jun 2017 RDA: Corrected use of @outputclass,            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     make localization attributes universal,   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     add scope/format where needed             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    20 Jun 2017  CE: Added prefix lw- to filename              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    27 Jun 2017  CE: Added &lt;footnotes&gt;                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Jul 2017  CE: Changed public identifier to LIGHTWEIGHT  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     DITA                                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    17 Aug 2017  CE: Deleted &lt;footnotes&gt; and added &lt;fn&gt; to the --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     &lt;body&gt; content model                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    17 Aug 2017  CE: Renamed multimedia elements after 2.0     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     multimedia domain proposal                --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    18 Sep 2017 RDA: Add value attributes to media control     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     elements, matching main TC proposal       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    18 Sep 2017 RDA: Adjust media class atts to match main TC  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    16 Oct 2017  CE: Added @props to elements that allow it    --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     in DITA 1.3                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAINS ATTRIBUTE OVERRIDE                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY included-domains ""&gt;
+&lt;!ENTITY xdita-constraint "(<A HREF="lw-topic.mod.html#ElementDef1">topic</A> xdita-c)"&gt;
+&lt;!ENTITY excluded-attributes ""&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    EXTENSION POINTS                           --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % ph    "ph"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.data"><STRONG>data</STRONG></A>  "<A HREF="lw-topic.mod.html#ElementDef25">data</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fig"><STRONG>fig</STRONG></A>   "<A HREF="lw-topic.mod.html#ElementDef20">fig</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.filter-adds"><STRONG>filter-adds</STRONG></A> " "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON DECLARATIONS                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- common content models --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.common-inline"><STRONG>common-inline</STRONG></A>  "#PCDATA|<A HREF="lw-topic.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-topic.mod.html#ElementDef23">image</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.all-inline"><STRONG>all-inline</STRONG></A>  "#PCDATA|<A HREF="lw-topic.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-topic.mod.html#ElementDef23">image</A>|<A HREF="lw-topic.mod.html#ElementDef26">xref</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.simple-blocks"><STRONG>simple-blocks</STRONG></A>  "<A HREF="lw-topic.mod.html#ElementDef7">p</A>|<A HREF="lw-topic.mod.html#ElementDef8">ul</A>|<A HREF="lw-topic.mod.html#ElementDef9">ol</A>|<A HREF="lw-topic.mod.html#ElementDef11">dl</A>|<A HREF="lw-topic.mod.html#ElementDef15">pre</A>|<A HREF="lw-topic.mod.html#ElementDef27">audio</A>|<A HREF="lw-topic.mod.html#ElementDef28">video</A>|<A HREF="lw-topic.mod.html#ElementDef36">fn</A>|<A HREF="lw-topic.mod.html#ElementDef37">note</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fn-blocks"><STRONG>fn-blocks</STRONG></A>  "<A HREF="lw-topic.mod.html#ElementDef7">p</A>|<A HREF="lw-topic.mod.html#ElementDef8">ul</A>|<A HREF="lw-topic.mod.html#ElementDef9">ol</A>|<A HREF="lw-topic.mod.html#ElementDef11">dl</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.all-blocks"><STRONG>all-blocks</STRONG></A>  "<A HREF="lw-topic.mod.html#ElementDef7">p</A>|<A HREF="lw-topic.mod.html#ElementDef8">ul</A>|<A HREF="lw-topic.mod.html#ElementDef9">ol</A>|<A HREF="lw-topic.mod.html#ElementDef11">dl</A>|<A HREF="lw-topic.mod.html#ElementDef15">pre</A>|<A HREF="lw-topic.mod.html#ElementDef27">audio</A>|<A HREF="lw-topic.mod.html#ElementDef28">video</A>|<A HREF="lw-topic.mod.html#ElementDef16">simpletable</A>|<A HREF="lw-topic.mod.html#ElementDef20">fig</A>|<A HREF="lw-topic.mod.html#ElementDef36">fn</A>|<A HREF="lw-topic.mod.html#ElementDef37">note</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.list-blocks"><STRONG>list-blocks</STRONG></A> "<A HREF="lw-topic.mod.html#ElementDef7">p</A>|<A HREF="lw-topic.mod.html#ElementDef8">ul</A>|<A HREF="lw-topic.mod.html#ElementDef9">ol</A>|<A HREF="lw-topic.mod.html#ElementDef11">dl</A>|<A HREF="lw-topic.mod.html#ElementDef15">pre</A>|<A HREF="lw-topic.mod.html#ElementDef27">audio</A>|<A HREF="lw-topic.mod.html#ElementDef28">video</A>|<A HREF="lw-topic.mod.html#ElementDef16">simpletable</A>|<A HREF="lw-topic.mod.html#ElementDef20">fig</A>|<A HREF="lw-topic.mod.html#ElementDef37">note</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.fig-blocks"><STRONG>fig-blocks</STRONG></A>  "<A HREF="lw-topic.mod.html#ElementDef7">p</A>|<A HREF="lw-topic.mod.html#ElementDef8">ul</A>|<A HREF="lw-topic.mod.html#ElementDef9">ol</A>|<A HREF="lw-topic.mod.html#ElementDef11">dl</A>|<A HREF="lw-topic.mod.html#ElementDef15">pre</A>|<A HREF="lw-topic.mod.html#ElementDef27">audio</A>|<A HREF="lw-topic.mod.html#ElementDef28">video</A>|<A HREF="lw-topic.mod.html#ElementDef16">simpletable</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>"&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- common attributes --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.filters"><STRONG>filters</STRONG></A>
+            'props      CDATA                           #IMPLIED
+             <A HREF="lw-topic.mod.html#EntityDef.filter-adds">%filter-adds;</A>                          ' &gt;
+&lt;!ENTITY % <A NAME="EntityDef.reuse"><STRONG>reuse</STRONG></A>
+            'id      NMTOKEN                            #IMPLIED
+             conref  CDATA                              #IMPLIED  ' &gt;
+&lt;!ENTITY % <A NAME="EntityDef.reference-content"><STRONG>reference-content</STRONG></A>
+            'href      CDATA                            #IMPLIED
+             format    CDATA                            #IMPLIED
+             scope     (local | peer | external)        #IMPLIED '&gt;
+<SPAN CLASS="COMMENT">&lt;!-- %fn-reuse; used for &lt;fn&gt; only, so you can remove this if you want --&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.fn-reuse"><STRONG>fn-reuse</STRONG></A>
+            'conref  CDATA                              #IMPLIED  ' &gt;
+&lt;!ENTITY % <A NAME="EntityDef.variable-content"><STRONG>variable-content</STRONG></A>
+            'keyref      CDATA                          #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.variable-links"><STRONG>variable-links</STRONG></A>
+            'keyref      CDATA                          #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.localization"><STRONG>localization</STRONG></A>
+            'dir         CDATA                          #IMPLIED
+             xml:lang    CDATA                          #IMPLIED
+             translate   CDATA                          #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.display-atts"><STRONG>display-atts</STRONG></A>
+             "scale ( 50|60|70|80|90|100|110|120|140|160|180|200 ) #IMPLIED
+              frame ( all|bottom|none|sides|top|topbot )           #IMPLIED
+              expanse ( column|page|spread|textline )              #IMPLIED"&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Topic  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef1"></A><STRONG>topic</STRONG>   (<A HREF="lw-topic.mod.html#ElementDef2">title</A>, <A HREF="lw-topic.mod.html#ElementDef3">shortdesc</A>?, <A HREF="lw-topic.mod.html#ElementDef4">prolog</A>?, <A HREF="lw-topic.mod.html#ElementDef5">body</A>?)  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef1"></A><STRONG>topic</STRONG>
+             id       ID          #REQUIRED
+             xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+	         ditaarch:DITAArchVersion CDATA "1.3"
+             domains CDATA "&amp;xdita-constraint; &amp;included-domains;"
+             outputclass  CDATA    #IMPLIED
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             class CDATA "- topic/topic "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Title --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef2"></A><STRONG>title</STRONG> (<A HREF="lw-topic.mod.html#EntityDef.common-inline">%common-inline;</A>)* &gt;
+&lt;!ATTLIST <A NAME="AttlistDef2"></A><STRONG>title</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/title "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Short description--&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef3"></A><STRONG>shortdesc</STRONG>     (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)* &gt;
+&lt;!ATTLIST <A NAME="AttlistDef3"></A><STRONG>shortdesc</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/shortdesc "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Prolog--&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef4"></A><STRONG>prolog</STRONG> (<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>)* &gt;
+&lt;!ATTLIST <A NAME="AttlistDef4"></A><STRONG>prolog</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             class CDATA "- topic/prolog "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Body                  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef5"></A><STRONG>body</STRONG>          ((<A HREF="lw-topic.mod.html#EntityDef.list-blocks">%list-blocks;</A>)*, <A HREF="lw-topic.mod.html#ElementDef6">section</A>*, <A HREF="lw-topic.mod.html#ElementDef36">fn</A>*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef5"></A><STRONG>body</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/body "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Section             --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef6"></A><STRONG>section</STRONG>       (<A HREF="lw-topic.mod.html#ElementDef2">title</A>?, (<A HREF="lw-topic.mod.html#EntityDef.all-blocks">%all-blocks;</A>)*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef6"></A><STRONG>section</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/section "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Paragraph  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef7"></A><STRONG>p</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef7"></A><STRONG>p</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/p "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Unordered list  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef8"></A><STRONG>ul</STRONG>             (<A HREF="lw-topic.mod.html#ElementDef10">li</A>)+        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef8"></A><STRONG>ul</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/ul "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Ordered list  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef9"></A><STRONG>ol</STRONG>             (<A HREF="lw-topic.mod.html#ElementDef10">li</A>)+        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef9"></A><STRONG>ol</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/ol "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: List item --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef10"></A><STRONG>li</STRONG>            (<A HREF="lw-topic.mod.html#EntityDef.list-blocks">%list-blocks;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef10"></A><STRONG>li</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/li "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Description list --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef11"></A><STRONG>dl</STRONG>             (<A HREF="lw-topic.mod.html#ElementDef12">dlentry</A>)+       &gt;
+&lt;!ATTLIST <A NAME="AttlistDef11"></A><STRONG>dl</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/dl "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Description entry --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef12"></A><STRONG>dlentry</STRONG>             (<A HREF="lw-topic.mod.html#ElementDef13">dt</A>, <A HREF="lw-topic.mod.html#ElementDef14">dd</A>)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef12"></A><STRONG>dlentry</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/dlentry "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Description term  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef13"></A><STRONG>dt</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef13"></A><STRONG>dt</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/dt "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Description   --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef14"></A><STRONG>dd</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.list-blocks">%list-blocks;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef14"></A><STRONG>dd</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/dd "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Preformatted content --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef15"></A><STRONG>pre</STRONG>            (#PCDATA|<A HREF="lw-topic.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-topic.mod.html#ElementDef26">xref</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef15"></A><STRONG>pre</STRONG>
+             xml:space  (preserve)               #FIXED 'preserve'
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/pre "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Table --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef16"></A><STRONG>simpletable</STRONG> (<A HREF="lw-topic.mod.html#ElementDef17">sthead</A>?, <A HREF="lw-topic.mod.html#ElementDef18">strow</A>+)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef16"></A><STRONG>simpletable</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/simpletable "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Table header row --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef17"></A><STRONG>sthead</STRONG> (<A HREF="lw-topic.mod.html#ElementDef19">stentry</A>+)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef17"></A><STRONG>sthead</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/sthead "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Table row --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef18"></A><STRONG>strow</STRONG> (<A HREF="lw-topic.mod.html#ElementDef19">stentry</A>*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef18"></A><STRONG>strow</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/strow "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Table cell --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef19"></A><STRONG>stentry</STRONG> (<A HREF="lw-topic.mod.html#EntityDef.simple-blocks">%simple-blocks;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef19"></A><STRONG>stentry</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/stentry "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Figure  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef20"></A><STRONG>fig</STRONG>   (<A HREF="lw-topic.mod.html#ElementDef2">title</A>?, <A HREF="lw-topic.mod.html#ElementDef21">desc</A>?, (<A HREF="lw-topic.mod.html#EntityDef.fig-blocks">%fig-blocks;</A>|<A HREF="lw-topic.mod.html#ElementDef23">image</A>|<A HREF="lw-topic.mod.html#ElementDef26">xref</A>)*)    &gt;
+&lt;!ATTLIST <A NAME="AttlistDef20"></A><STRONG>fig</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.display-atts">%display-atts;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             outputclass CDATA #IMPLIED
+             class CDATA "- topic/fig " &gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Description  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef21"></A><STRONG>desc</STRONG>		(<A HREF="lw-topic.mod.html#EntityDef.common-inline">%common-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef21"></A><STRONG>desc</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/desc "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Phrase content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef22"></A><STRONG>ph</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef22"></A><STRONG>ph</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/ph "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Image  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef23"></A><STRONG>image</STRONG>             (<A HREF="lw-topic.mod.html#ElementDef24">alt</A>?)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef23"></A><STRONG>image</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.reference-content">%reference-content;</A>
+             height     NMTOKEN                          #IMPLIED
+             width      NMTOKEN                          #IMPLIED
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/image "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Alternative content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef24"></A><STRONG>alt</STRONG>           (#PCDATA|<A HREF="lw-topic.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef24"></A><STRONG>alt</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/alt "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Data  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef25"></A><STRONG>data</STRONG>             (#PCDATA|<A HREF="lw-topic.mod.html#EntityDef.data">%data;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef25"></A><STRONG>data</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA                            #IMPLIED
+             value      CDATA                            #IMPLIED
+             <A HREF="lw-topic.mod.html#EntityDef.reference-content">%reference-content;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/data "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Reference  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef26"></A><STRONG>xref</STRONG>          (<A HREF="lw-topic.mod.html#EntityDef.common-inline">%common-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef26"></A><STRONG>xref</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.reference-content">%reference-content;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-links">%variable-links;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/xref "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Audio --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef27"></A><STRONG>audio</STRONG> (<A HREF="lw-topic.mod.html#ElementDef21">desc</A>?, <A HREF="lw-topic.mod.html#ElementDef29">media-controls</A>?, <A HREF="lw-topic.mod.html#ElementDef30">media-autoplay</A>?, <A HREF="lw-topic.mod.html#ElementDef31">media-loop</A>?, <A HREF="lw-topic.mod.html#ElementDef32">media-muted</A>?, <A HREF="lw-topic.mod.html#ElementDef34">media-source</A>*, <A HREF="lw-topic.mod.html#ElementDef35">media-track</A>*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef27"></A><STRONG>audio</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/object media-d/audio "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Video --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef28"></A><STRONG>video</STRONG> (<A HREF="lw-topic.mod.html#ElementDef21">desc</A>?, <A HREF="lw-topic.mod.html#ElementDef33">video-poster</A>?, <A HREF="lw-topic.mod.html#ElementDef29">media-controls</A>?, <A HREF="lw-topic.mod.html#ElementDef30">media-autoplay</A>?, <A HREF="lw-topic.mod.html#ElementDef31">media-loop</A>?, <A HREF="lw-topic.mod.html#ElementDef32">media-muted</A>?, <A HREF="lw-topic.mod.html#ElementDef34">media-source</A>*, <A HREF="lw-topic.mod.html#ElementDef35">media-track</A>*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef28"></A><STRONG>video</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             outputclass  CDATA          #IMPLIED
+             height     NMTOKEN                          #IMPLIED
+             width      NMTOKEN                          #IMPLIED
+             class CDATA "+ topic/object media-d/video "&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Display controls  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef29"></A><STRONG>media-controls</STRONG> 	EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef29"></A><STRONG>media-controls</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA            #FIXED "controls"
+             value (true|false)          #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/media-controls "&gt;
+<SPAN CLASS="COMMENT">&lt;!-- value      CDATA         (y|n)  "y" --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Media autoplay  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef30"></A><STRONG>media-autoplay</STRONG> 	EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef30"></A><STRONG>media-autoplay</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA            #FIXED "autoplay"
+             value (true|false)          #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/media-autoplay "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: &lt;Media loop  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef31"></A><STRONG>media-loop</STRONG> 	EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef31"></A><STRONG>media-loop</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA            #FIXED "loop"
+             value (true|false)          #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/media-loop "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Media muted  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef32"></A><STRONG>media-muted</STRONG> 	EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef32"></A><STRONG>media-muted</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA            #FIXED "muted"
+             value (true|false)          #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/media-muted "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Poster image  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef33"></A><STRONG>video-poster</STRONG>		EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef33"></A><STRONG>video-poster</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA         #FIXED "poster"
+             value      CDATA         #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/video-poster "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Source  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef34"></A><STRONG>media-source</STRONG>		EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef34"></A><STRONG>media-source</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA           #FIXED "source"
+             value      CDATA           #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/media-source "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Track for captions  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef35"></A><STRONG>media-track</STRONG>		EMPTY        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef35"></A><STRONG>media-track</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA           #FIXED "track"
+             value      CDATA           #IMPLIED
+             type (subtitles | captions | descriptions | chapters | metadata) #IMPLIED
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/param media-d/media-track "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Footnote  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef36"></A><STRONG>fn</STRONG> ( <A HREF="lw-topic.mod.html#EntityDef.fn-blocks">%fn-blocks;</A> )*  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef36"></A><STRONG>fn</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.fn-reuse">%fn-reuse;</A>
+             callout     CDATA          #IMPLIED
+             outputclass CDATA          #IMPLIED
+             id          NMTOKEN        #REQUIRED
+             class       CDATA "- topic/fn "&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Note  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef37"></A><STRONG>note</STRONG> ( <A HREF="lw-topic.mod.html#EntityDef.simple-blocks">%simple-blocks;</A> )*  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef37"></A><STRONG>note</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.reuse">%reuse;</A>
+             type (caution|warning|danger|trouble|notice|note) "note"
+             outputclass  CDATA          #IMPLIED
+             class        CDATA "- topic/note "
+             &gt;
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

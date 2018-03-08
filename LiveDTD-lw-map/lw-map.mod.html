@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>lw-map.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>lw-map.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE><SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    Lightweight DITA Map                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.0                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      XXX                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an
+      appropriate system identifier:
+PUBLIC "-//OASIS//ELEMENTS LIGHTWEIGHT DITA Map//EN"
+      Delivered as file "lw-map.mod"                               --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Lightweight DITA                                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for Lightweight DITA maps              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             XXXX                                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) OASIS                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Nov 2014 KJE: Upload files to DITA TC SVN repo          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    16 May 2016  MG: Upload files to GitHub repo               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    04 Jun 2017  AH: Added &lt;keydef&gt; and &lt;linktext&gt;             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    11 Jun 2017 KJE: Added headers and update logs             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jun 2017  CE: Added XDITA constraint token              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jun 2017  CE: Made map ID optional                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    13 Jun 2017  CE: Added props to &lt;keydef&gt;                   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    14 Jun 2017  CE: Added &lt;image&gt;, &lt;xref&gt; to &lt;ph&gt;; add &lt;alt&gt;  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    14 Jun 2017 RDA: Corrected use of @outputclass,            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     make localization attributes universal,   --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     add scope/format where needed             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    20 Jun 2017  CE: Added prefix lw- to filename              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Jul 2017  CE: Changed public identifier to LIGHTWEIGHT  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     DITA                                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    10 Feb 2018  AH: Added @processing-role to &lt;topicref&gt;      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    DOMAINS ATTRIBUTE OVERRIDE                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY included-domains ""&gt;
+&lt;!ENTITY xdita-constraint "(<A HREF="lw-map.mod.html#ElementDef1">map</A> xdita-c)"&gt;
+&lt;!ENTITY excluded-attributes ""&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    EXTENSION POINTS                 --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % ph  "ph"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.data"><STRONG>data</STRONG></A>  "<A HREF="lw-map.mod.html#ElementDef5">data</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.filter-adds"><STRONG>filter-adds</STRONG></A> " "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    COMMON DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+&lt;!ENTITY % <A NAME="EntityDef.common-inline"><STRONG>common-inline</STRONG></A>  "#PCDATA|<A HREF="lw-map.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-map.mod.html#ElementDef7">image</A>|<A HREF="lw-map.mod.html#EntityDef.data">%data;</A>"&gt;
+&lt;!ENTITY % <A NAME="EntityDef.all-inline"><STRONG>all-inline</STRONG></A>  "#PCDATA|<A HREF="lw-map.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-map.mod.html#ElementDef7">image</A>|<A HREF="lw-map.mod.html#ElementDef9">xref</A>|<A HREF="lw-map.mod.html#EntityDef.data">%data;</A>"&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--common attributes--&gt;</SPAN>
+&lt;!ENTITY % <A NAME="EntityDef.filters"><STRONG>filters</STRONG></A>
+            'props      CDATA                              #IMPLIED
+             <A HREF="lw-map.mod.html#EntityDef.filter-adds">%filter-adds;</A>                          ' &gt;
+&lt;!ENTITY % <A NAME="EntityDef.reuse"><STRONG>reuse</STRONG></A>
+            'id      NMTOKEN                            #IMPLIED
+             conref  CDATA                              #IMPLIED  ' &gt;
+&lt;!ENTITY % <A NAME="EntityDef.reference-content"><STRONG>reference-content</STRONG></A>
+            'href      CDATA                            #IMPLIED
+             format    CDATA                            #IMPLIED
+             scope     (local | peer | external)        #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.control-variables"><STRONG>control-variables</STRONG></A>
+            'keys      CDATA                            #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.variable-content"><STRONG>variable-content</STRONG></A>
+            'keyref      CDATA                            #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.variable-links"><STRONG>variable-links</STRONG></A>
+            'keyref      CDATA                            #IMPLIED '&gt;
+&lt;!ENTITY % <A NAME="EntityDef.localization"><STRONG>localization</STRONG></A>
+            'dir         CDATA                              #IMPLIED
+             xml:lang    CDATA                              #IMPLIED
+             translate   CDATA                             #IMPLIED '&gt;
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Map  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef1"></A><STRONG>map</STRONG>		(<A HREF="lw-map.mod.html#ElementDef2">topicmeta</A>?, (<A HREF="lw-map.mod.html#ElementDef10">topicref</A> | <A HREF="lw-map.mod.html#ElementDef11">keydef</A>)*)  &gt;
+&lt;!ATTLIST <A NAME="AttlistDef1"></A><STRONG>map</STRONG>
+             id       ID          #IMPLIED
+             xmlns:ditaarch CDATA #FIXED "http://dita.oasis-open.org/architecture/2005/"
+	         ditaarch:DITAArchVersion CDATA "1.3"
+             domains    CDATA                    "&amp;xdita-constraint; &amp;included-domains;"
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- map/map "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Metadata--&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef2"></A><STRONG>topicmeta</STRONG>     (<A HREF="lw-map.mod.html#ElementDef3">navtitle</A>?, <A HREF="lw-map.mod.html#ElementDef4">linktext</A>?, <A HREF="lw-map.mod.html#ElementDef5">data</A>*) &gt;
+&lt;!ATTLIST <A NAME="AttlistDef2"></A><STRONG>topicmeta</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             class CDATA "- map/topicmeta "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Navigation title --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef3"></A><STRONG>navtitle</STRONG> (#PCDATA|<A HREF="lw-map.dtd.html#EntityDef.ph">%ph;</A>)* &gt;
+&lt;!ATTLIST <A NAME="AttlistDef3"></A><STRONG>navtitle</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/navtitle "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Link text--&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef4"></A><STRONG>linktext</STRONG>     (#PCDATA | <A HREF="lw-map.dtd.html#EntityDef.ph">%ph;</A>)* &gt;
+&lt;!ATTLIST <A NAME="AttlistDef4"></A><STRONG>linktext</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- map/linktext "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Data  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef5"></A><STRONG>data</STRONG>             (#PCDATA|<A HREF="lw-map.mod.html#EntityDef.data">%data;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef5"></A><STRONG>data</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             name       CDATA                            #IMPLIED
+             value      CDATA                            #IMPLIED
+             <A HREF="lw-map.mod.html#EntityDef.reference-content">%reference-content;</A>
+             <A HREF="lw-map.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/data "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Phrase content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef6"></A><STRONG>ph</STRONG>             (<A HREF="lw-map.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef6"></A><STRONG>ph</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-map.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/ph "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Image  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef7"></A><STRONG>image</STRONG>             (<A HREF="lw-map.mod.html#ElementDef8">alt</A>?)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef7"></A><STRONG>image</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.reference-content">%reference-content;</A>
+             height     NMTOKEN                          #IMPLIED
+             width      NMTOKEN                          #IMPLIED
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-map.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/image "&gt;
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Alternative content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef8"></A><STRONG>alt</STRONG>           (#PCDATA|<A HREF="lw-map.dtd.html#EntityDef.ph">%ph;</A>|<A HREF="lw-map.mod.html#EntityDef.data">%data;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef8"></A><STRONG>alt</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-map.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/alt "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Reference  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef9"></A><STRONG>xref</STRONG>          (<A HREF="lw-map.mod.html#EntityDef.common-inline">%common-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef9"></A><STRONG>xref</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.reference-content">%reference-content;</A>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-map.mod.html#EntityDef.variable-links">%variable-links;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- topic/xref "&gt;
+
+
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Topic or Map Reference  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef10"></A><STRONG>topicref</STRONG>	(<A HREF="lw-map.mod.html#ElementDef2">topicmeta</A>?, <A HREF="lw-map.mod.html#ElementDef10">topicref</A>*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef10"></A><STRONG>topicref</STRONG>
+             <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+             locktitle CDATA      			 #FIXED 'yes'
+	         <A HREF="lw-map.mod.html#EntityDef.reuse">%reuse;</A>
+             <A HREF="lw-map.mod.html#EntityDef.filters">%filters;</A>
+             <A HREF="lw-map.mod.html#EntityDef.reference-content">%reference-content;</A>
+	         <A HREF="lw-map.mod.html#EntityDef.control-variables">%control-variables;</A>
+             <A HREF="lw-map.mod.html#EntityDef.variable-links">%variable-links;</A>
+             processing-role
+                        CDATA       #FIXED      'resource-only'
+             outputclass  CDATA          #IMPLIED
+             class CDATA "- map/topicref "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Key Definition  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef11"></A><STRONG>keydef</STRONG>	(<A HREF="lw-map.mod.html#ElementDef2">topicmeta</A>?, <A HREF="lw-map.mod.html#ElementDef5">data</A>*)        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef11"></A><STRONG>keydef</STRONG>
+              <A HREF="lw-map.mod.html#EntityDef.localization">%localization;</A>
+              <A HREF="lw-map.mod.html#EntityDef.filters">%filters;</A>
+              <A HREF="lw-map.mod.html#EntityDef.reference-content">%reference-content;</A>
+              keys
+                        CDATA
+                                  #REQUIRED
+              processing-role
+                        CDATA       #FIXED      'resource-only'
+              outputclass  CDATA          #IMPLIED
+              class CDATA "+ map/topicref mapgroup-d/keydef "
+&gt;
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

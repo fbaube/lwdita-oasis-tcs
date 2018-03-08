@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>lw-highlightDomain.mod</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="livedtd.css">
+<STYLE TYPE="text/css">
+  STRONG { font-weight: bold; color: red;}
+  .COMMENT { font-style:italic; color: #A8A8A8;}
+</STYLE>
+</HEAD>
+<BODY onLoad="parent.file.document.open();parent.file.document.write('<BODY TOPMARGIN=0><B>lw-highlightDomain.mod</B></BODY>');parent.file.document.close()"><?LIVEDTD ENDHEAD?>
+<PRE><SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    HEADER                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  MODULE:    Lightweight DITA Highlighting Domain              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  VERSION:   1.0                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  DATE:      XXX                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                    TYPICAL INVOCATION                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  Refer to this file by the following public identifier or an
+      appropriate system identifier:
+PUBLIC "-//OASIS//ELEMENTS LIGHTWEIGHT DITA Highlight Domain//EN"
+      Delivered as file "lw-highlightDomain.mod"                      --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- SYSTEM:     Lightweight DITA                                  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- PURPOSE:    Declaring the elements and specialization         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             attributes for the LwDITA highlighting domain     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             XXXX                                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             (C) OASIS                                         --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--             All Rights Reserved.                              --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                                                               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--  UPDATES:                                                     --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Nov 2014 KJE: Upload files to DITA TC SVN repo          --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    16 May 2016  MG: Upload files to GitHub repo               --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    11 Jun 2017 KJE: Added headers and update logs             --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    14 Jun 2017 RDA: Added @outputclass                        --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--    25 Jul 2017  CE: Changed public identifier to LIGHTWEIGHT  --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!--                     DITA                                      --&gt;</SPAN>
+<SPAN CLASS="COMMENT">&lt;!-- ============================================================= --&gt;</SPAN>
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Bold content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef38"></A><STRONG>b</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef38"></A><STRONG>b</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/ph hi-d/b "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Italic content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef39"></A><STRONG>i</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef39"></A><STRONG>i</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/ph hi-d/i "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Underlined content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef40"></A><STRONG>u</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef40"></A><STRONG>u</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/ph hi-d/u "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Superscript content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef41"></A><STRONG>sup</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef41"></A><STRONG>sup</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/ph hi-d/sup "&gt;
+
+<SPAN CLASS="COMMENT">&lt;!--                    LONG NAME: Subscript content  --&gt;</SPAN>
+&lt;!ELEMENT <A NAME="ElementDef42"></A><STRONG>sub</STRONG>             (<A HREF="lw-topic.mod.html#EntityDef.all-inline">%all-inline;</A>)*        &gt;
+&lt;!ATTLIST <A NAME="AttlistDef42"></A><STRONG>sub</STRONG>
+             <A HREF="lw-topic.mod.html#EntityDef.localization">%localization;</A>
+             <A HREF="lw-topic.mod.html#EntityDef.variable-content">%variable-content;</A>
+             outputclass  CDATA          #IMPLIED
+             class CDATA "+ topic/ph hi-d/sub "&gt;
+<?LIVEDTD EOF?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

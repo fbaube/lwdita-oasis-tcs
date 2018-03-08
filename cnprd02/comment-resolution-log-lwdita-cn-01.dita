@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_kd4_c4c_pw">
+  <title>Comment resolution log</title>
+  <shortdesc>The table summarizes the comments that were received during the 30-day review of the
+    committee note "Lightweight DITA: An Introduction" and their resolution. Comments came to the
+    dita-comment, Lightweight DITA SC, and DITA TC mailing lists, and to Carlos Evia's email
+    address.</shortdesc>
+  <refbody>
+    <section>
+      <p>A status of "Completed" in the Disposition column indicates that the editors have
+        implemented the changes on which the TC decided, which are outlined in the Resolution
+        column. It also is a hyperlink to the GitHub commit notice.</p>
+      <p>The item number is a hyperlink to the e-mail on the dita-comment or DITA TC mailing lists.
+        Carlos Evia forwarded all relevant messages that he received to the DITA TC mailing
+        list.</p>
+      <p>The following abbreviations are used:</p>
+      <ul>
+        <li>CE = Carlos Evia</li>
+        <li>KJE = Kristen James Eberlein</li>
+        <li>AH = Alan Houser</li>
+      </ul>
+      <simpletable frame="all" relcolwidth="1.0* 1.02* 1.01* 1.01* 1.14* 1.01* 1.01*">
+        <sthead>
+          <stentry>Item #</stentry>
+          <stentry>Date</stentry>
+          <stentry>Commenter</stentry>
+          <stentry>Description</stentry>
+          <stentry>Date acknowledged</stentry>
+          <stentry>Resolution</stentry>
+          <stentry>Disposition</stentry>
+        </sthead>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00005.html"
+              format="html" scope="external">1</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Roger Hadley</stentry>
+          <stentry>List DITA elements not present in LwDITA: "How would LwDITA authoring be
+            different in my content?"</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Discussed at subcommittee call</stentry>
+          <stentry>No change required</stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00006.html"
+              format="html" scope="external">2</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Scott Prentice</stentry>
+          <stentry>Use the term "components" when referring to items like "Paragraph," and
+            "elements" when talking about XML or HTML nodes (like "&lt;p>")</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Will update topics that mention "elements" when talking about non-XML
+            structures</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/33f9d12339f2b0568737a57b8c1a85e8739ad451"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00006.html"
+              format="html" scope="external">3</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Scott Prentice</stentry>
+          <stentry>Mention if image is always inline and fig/image is break</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Change implemented by CE</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/0cffcad2ff15314bca757188827669f5b541fa43"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00006.html"
+              format="html" scope="external">4</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Scott Prentice</stentry>
+          <stentry>
+            <p>Note the need for map/topicmeta/navtitle in lieu of map/title</p>
+          </stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Change implemented by CE</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/0cffcad2ff15314bca757188827669f5b541fa43"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00006.html"
+              format="html" scope="external">5</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Scott Prentice</stentry>
+          <stentry>Include topicref/@processing-role </stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Change implemented by AH</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/0cffcad2ff15314bca757188827669f5b541fa43"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00006.html"
+              format="html" scope="external">6</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Scott Prentice</stentry>
+          <stentry>Add DITA-FMx to list of tools</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Discussed at subcommittee call</stentry>
+          <stentry>Completed on wiki page</stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00006.html"
+              format="html" scope="external">7</xref></stentry>
+          <stentry>28 November 2017</stentry>
+          <stentry>Scott Prentice</stentry>
+          <stentry>Bold "Filtering attribute" subhead within attributes table</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Change implemented by CE</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/c46120946fe1d49e79d0326fee15e39756ecb2b2?diff=unified"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00007.html"
+              format="html" scope="external">8</xref></stentry>
+          <stentry>29 November 2017</stentry>
+          <stentry>Jang Graat</stentry>
+          <stentry>Do not mention any tools</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Will move "tools" topic to a wiki page maintained by subcommittee </stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/33f9d12339f2b0568737a57b8c1a85e8739ad451"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-comment/201711/msg00008.html"
+              format="html" scope="external">9</xref></stentry>
+          <stentry>29 November 2017</stentry>
+          <stentry>Rodolfo Raya</stentry>
+          <stentry>Do not mention any tools</stentry>
+          <stentry>7 December 2017</stentry>
+          <stentry>Will move "tools" topic to a wiki page maintained by subcommittee</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/33f9d12339f2b0568737a57b8c1a85e8739ad451"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-lightweight-dita/201712/msg00006.html"
+              format="html" scope="external">10</xref></stentry>
+          <stentry>11 December 2017</stentry>
+          <stentry>Keith Schengili-Roberts</stentry>
+          <stentry>Explain proper way to call keyrefs in MDITA (HDITA snippet or CommonMark shortcut
+            reference link)</stentry>
+          <stentry>Not applicable</stentry>
+          <stentry>Official way is to use CommonMark shortcut reference links. Will update
+            samples</stentry>
+          <stentry><xref
+              href="https://github.com/oasis-tcs/dita-lwdita/commit/33f9d12339f2b0568737a57b8c1a85e8739ad451"
+              format="html" scope="external">Completed</xref></stentry>
+        </strow>
+        <strow>
+          <stentry><xref
+              href="https://lists.oasis-open.org/archives/dita-lightweight-dita/201712/msg00008.html"
+              format="html" scope="external">11</xref></stentry>
+          <stentry>20 December 2017</stentry>
+          <stentry>Jang Graat</stentry>
+          <stentry>Explain (all?) design decisions?</stentry>
+          <stentry>Not applicable</stentry>
+          <stentry>Discussed at subcommittee call</stentry>
+          <stentry>No change required</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </refbody>
+</reference>
